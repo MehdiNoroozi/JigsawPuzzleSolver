@@ -28,7 +28,7 @@ generate_jps_dataset /path/to/original/imagenet/lmdb/dataset /output/peth/to/jps
 ```
 The first argument is the path to ImageNet lmdb dataset includes shuffled images with original size. Caffe indludes scripts to generate this dataset.
 
-Then you need to make the customized caffe version that generates puzzles on the fly.
+Then you need to make the customized Caffe version that generates puzzles on the fly.
 ```bash
 cd caffe-maste-jps
 make all matcaffe
@@ -38,7 +38,7 @@ To train jigsaw puzzle solver use solver_cfn_jps.prototxt, you need to set datas
 
 To train CFN for recognition use solver_cfn_rec.prototxt, you need to set ImageNet lmdb path which includes resized 256x256 images in train_val_cfn_rec.prototxt.
 
-You can use cfn_jps_test.m and cfn_rec_test.m to test the trained models in matlab. The trained models are available on [project page](http://www.cvg.unibe.ch/research/JigsawPuzzleSolver.html)
+You can use cfn_jps_test.m and cfn_rec_test.m to test the trained models in matlab. The trained models are available on the [project page.](http://www.cvg.unibe.ch/research/JigsawPuzzleSolver.html)
 
 To reproduce ImageNet classfication experiment results(Table 2), you need to train CFN for recognition initialized with jigsaw puzzle solver weights and lock desired convolutinal layers. 
 
