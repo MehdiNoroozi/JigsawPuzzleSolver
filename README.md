@@ -34,13 +34,13 @@ cd caffe-maste-jps
 make all matcaffe
 ```
 
-To train jigsaw puzzle solver use solver_cfn_jps.prototxt. You need to set dataset produced above in train_val_cfn_jps.prototxt.
+To train jigsaw puzzle solver use solver_cfn_jps.prototxt, you need to set dataset produced above in train_val_cfn_jps.prototxt.
 
-To train CFN for recognition use solver_cfn_rec.prototxt. You need to set ImageNet lmdb path which includes rezied 256x256 images in train_val_cfn_rec.prototxt.
+To train CFN for recognition use solver_cfn_rec.prototxt, you need to set ImageNet lmdb path which includes resized 256x256 images in train_val_cfn_rec.prototxt.
 
-You can use cfn_jps_test.m and cfn_rec_test.m to test the trained models in matlab. You can find trained models from project webpage.
+You can use cfn_jps_test.m and cfn_rec_test.m to test the trained models in matlab. The trained models from [project page](http://www.cvg.unibe.ch/research/JigsawPuzzleSolver.html)
 
-To regenerate ImageNet classfication experiment results(Table 2), you need to train CFN for recognition initialized with jigsaw puzzle solver weights and lock desired convolutinal layers. 
+To reproduce ImageNet classfication experiment results(Table 2), you need to train CFN for recognition initialized with jigsaw puzzle solver weights and lock desired convolutinal layers. 
 
 
 
