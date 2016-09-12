@@ -40,7 +40,7 @@ To train CFN for recognition use solver_cfn_rec.prototxt. You need to set ImageN
 
 You can use cfn_jps_test.m and cfn_rec_test.m to test the trained models in matlab. You can find trained models from project webpage.
 
-To regenerate ImageNet classfication experiment results(Table 2). You need to train CFN for recognition initialized with jigsaw puzzle task weights and locked desired convolutinal layers. 
+To regenerate ImageNet classfication experiment results(Table 2), you need to train CFN for recognition initialized with jigsaw puzzle solver weights and lock desired convolutinal layers. 
 
 
 
