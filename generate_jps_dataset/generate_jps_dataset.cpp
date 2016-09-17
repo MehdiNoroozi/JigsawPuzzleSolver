@@ -213,7 +213,20 @@ int main(int argc, char** argv)
 		datum.ParseFromString(cursor->value());
 		DecodeDatumNative(&datum);
 
-		IplImage * img = DatumToIplImage(&datum);
+		IplImage * img_ = DatumToIplImage(&datum);
+		CvSize new_sz;
+		if( img_->width <= img_->height )
+		{
+			new_sz.width = 256;
+			new_sz.height = ((float)img_->height/img_->width)*256;
+		}
+		else
+		{
+			new_sz.height = 256;
+			new_sz.width = ((float)img_->width/img_->height)*256;
+		}
+		IplImage * img = cvCreateImage( new_sz, 8, 3);
+		cvResize( img_, img); 
 		CvPoint corner = cvPoint( (img->width - temp_img_c->width)/2,
 							   (img->height - temp_img_c->height)/2 );
 		CvRect rct = cvRect( corner.x, corner.y, temp_img_c->width, temp_img_c->height );
@@ -224,6 +237,7 @@ int main(int argc, char** argv)
 		item_id++;
 
 		cvReleaseImage( &img );
+		cvReleaseImage( &img_ );
 		
 		cursor->Next();
 	}
