@@ -1,0 +1,4 @@
+@set UPDATED 31 December 2014
+@set UPDATED-MONTH December 2014
+@set EDITION 1.15
+@set VERSION 1.15
